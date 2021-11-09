@@ -16,7 +16,7 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           script: |
-            cd ~/exoDeploy/preprod
+            cd ~/exoDeploy/preprod/crypto-api-exo
             git pull origin dev
             composer install
             php bin/console cache:clear
