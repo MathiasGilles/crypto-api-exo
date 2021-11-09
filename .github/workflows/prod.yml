@@ -1,14 +1,14 @@
-name: Preprod
+name: Prod
 
 on:
   push:
-    branches: [ preprod ]
+    branches: [ main ]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: preprod
+      - name: prod
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.HOST }}
@@ -16,7 +16,7 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           script: |
-            cd ~/exoDeploy/preprod/crypto-api-exo
+            cd ~/exoDeploy/prod/crypto-api-exo
             git pull origin dev
             composer update
             composer install
