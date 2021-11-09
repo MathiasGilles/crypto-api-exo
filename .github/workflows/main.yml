@@ -2,7 +2,7 @@ name: Preprod
 
 on:
   push:
-    branches: [ dev ]
+    branches: [ preprod ]
 
 jobs:
   deploy:
