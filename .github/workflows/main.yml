@@ -18,5 +18,6 @@ jobs:
           script: |
             cd ~/exoDeploy/preprod/crypto-api-exo
             git pull origin dev
+            composer update
             composer install
             php bin/console cache:clear
